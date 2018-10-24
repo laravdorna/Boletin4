@@ -12,8 +12,8 @@ package boletin4.pkg4_restaurantegallego;
 public class PolboConPatacas {
 
     //ATRIBUTOS
-    private int kPatacas;
-    private int kPolbo;
+    private double kPatacas;
+    private double kPolbo;
 
     //CONSTRUCTORES
     public PolboConPatacas() {
@@ -25,7 +25,7 @@ public class PolboConPatacas {
     }
 
     //METODOS DE ACCESO
-    public int getkPatacas() {
+    public double getkPatacas() {
         return kPatacas;
     }
 
@@ -33,7 +33,7 @@ public class PolboConPatacas {
         this.kPatacas = kPatacas;
     }
 
-    public int getkPolbo() {
+    public double getkPolbo() {
         return kPolbo;
     }
 
@@ -70,9 +70,22 @@ public class PolboConPatacas {
     }
 
     //por cada 3 persoas , restaurante utiliza 2 kg de polbo e 1 de patacas.
+    //sin bucle
     public int calcularClientes() {
         int clientes = 0;
-        
+        clientes = (int) (3 * this.kPolbo * this.kPatacas / 2);
         return clientes;
     }
+    //mismo calculo con bucle
+    public int calcularClientesBucle() {
+        int clientes = 0;
+        while ((this.kPolbo - 2 >= 0) && (this.kPatacas >= 1)) {
+            clientes = clientes + 3;
+            this.kPolbo = this.kPolbo - 2;
+            this.kPatacas = this.kPatacas - 1;
+
+        }
+        return clientes;
+    }
+
 }
