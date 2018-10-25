@@ -70,7 +70,6 @@ public class PolboConPatacas {
     }
 
     //METODOS DE CALCULO DE CLIENTES
-    
     //por cada 3 persoas , restaurante utiliza 2 kg de polbo e 1 de patacas.
     //sin bucle
     public int calcularClientes() {
@@ -78,6 +77,7 @@ public class PolboConPatacas {
         clientes = (int) (3 * this.kPolbo * this.kPatacas / 2);
         return clientes;
     }
+
     //mismo calculo con bucle
     public int calcularClientesBucle() {
         int clientes = 0;
@@ -89,13 +89,14 @@ public class PolboConPatacas {
         }
         return clientes;
     }
+
     //calcula los clientes usando el minimo comunmultiplo
-     public int calcularClientesMin (){
+    public int calcularClientesMin() {
         double polbo;
         int clientes;
-       polbo=this.kPolbo/2;
-        clientes= (int) Math.min(polbo,this.kPatacas);
-        clientes=clientes*3;
+        polbo = this.kPolbo / 2;
+        clientes = (int) Math.min(polbo, this.kPatacas);
+        clientes = clientes * 3;
         return clientes;
     }
 
